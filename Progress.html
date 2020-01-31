@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var progress =document.createElement("progress");
+    progress.min = 0;
+    
+    var input = document.createElement("input");
+    input.type = "number";
+    input.placeholder- "Enter Max Time";
+
+    var btn =document.createElement("button");
+    btn.innerHTML="Start Timer";
+    btn.onclick=startProgression;
+
+    function startProgression(){
+      let max =input.value;
+      progress.max =max;
+      let i =0;
+      var interval =setInterval(()=>{
+        if(i>max){
+           clearInterval(interval);
+           document.write("Progress Completed!!");
+        }else{
+            progress.value =i;
+            i++;
+        }
+
+      },1000);
+    }
+
+    append(progress);
+    append(input);
+    append(btn);
+
+    function append(elem){
+        document.body.append(elem);
+    }
+
+         
+   </script>
+
+</body>
+</html>
